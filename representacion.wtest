@@ -1,0 +1,31 @@
+import feroz.*
+import abuelita.*
+import caperucita.*
+import cazador.*
+import canasta.*
+
+describe "Representaciones de la historia del lobo Feroz" {
+    test "Historia 1" {
+        feroz.correr()
+        feroz.correr()
+        feroz.comerUna_(abuelita)
+        canasta.quitarManzanas(1)
+        feroz.comerUna_(caperucita)
+        feroz.comerUna_(canasta)
+        feroz.comerUna_(cazador)
+
+        assert.that(feroz.estaSaludable()) 
+    }
+
+    test "Historia 2" {
+        feroz.correr()
+        feroz.correr()
+        feroz.comerUna_(abuelita)
+        canasta.quitarManzanas(1)
+        feroz.comerUna_(caperucita)
+        feroz.comerUna_(canasta)
+        feroz.sufrirCrisis()
+
+        assert.notThat(feroz.estaSaludable())
+    }
+}
